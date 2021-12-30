@@ -134,7 +134,7 @@ public class CourseSearchController implements Initializable {
         DataBaseConnection dataBaseConnection2 = new DataBaseConnection();
         Connection connection = dataBaseConnection2.getDBConnection();
         Statement st;
-        
+
         try {
             st = connection.createStatement();
             st.executeUpdate(query);

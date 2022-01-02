@@ -4,20 +4,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -129,12 +125,15 @@ public class CourseSearchController implements Initializable {
         }
         return result;
     }
+
+
     Connection con=null;
     ResultSet rs=null;
     PreparedStatement pstmt=null;
-   private final String deleteQuery="delete from courses where id=?";
 
-    public void deleteEmployee(ActionEvent ae){
+    private static final String deleteQuery="DELETE FROM courses WHERE id=?";
+
+    public void deleteRecord(){
         try (Connection connection = DataBaseConnection.getDBConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
 
@@ -145,25 +144,13 @@ public class CourseSearchController implements Initializable {
             }else{
                 label.setText("please check course id");
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             e.printStackTrace();
         }
     }
 
 
-
     private static final String insertQuery = "INSERT INTO courses (title, address, price, email, description ) VALUES (?, ?, ?, ?, ?)";
-
-    public void update(ActionEvent ae) throws IOException{
-        Stage primaryStage= new Stage();
-        Parent root =FXMLLoader.load(getClass().getResource("/application/Update.fxml"));
-//			Parent root = FXMLLoader.load(getClass().getResource(arg0))
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
 
     private void insertRecord() {
         try (Connection connection = DataBaseConnection.getDBConnection();
@@ -186,11 +173,13 @@ public class CourseSearchController implements Initializable {
         System.out.println("Title: " + tfTitle.getText());
     }
 
+    public void handleDeleteButtonAction(){
+        deleteRecord();
+    }
 
     public void handleButtonAction() {
         insertRecord();
     }
-//    public void handleUpdateButtonAction() {
-//        update();
-//    }
 }
+
+

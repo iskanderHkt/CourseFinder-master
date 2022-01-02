@@ -1,4 +1,4 @@
-package com.example.coursefinder;
+package com.example.coursefinder.DB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package com.example.coursefinder;
+package com.example.coursefinder.model;
 
 public class CourseSearchModel {
     int id;

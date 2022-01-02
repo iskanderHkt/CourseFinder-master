@@ -9,65 +9,77 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursefinder.controller.CourseSearchController">
-   <Label layoutX="65.0" layoutY="21.0" text="Search Course">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #3a4960;" stylesheets="my.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursefinder.controller.CourseSearchController">
+   <Label layoutX="51.0" layoutY="21.0" text="Search Course" textFill="#f7f5f4">
       <font>
-         <Font name="System Bold" size="14.0" />
+         <Font name="Courier New Bold" size="15.0" />
       </font>
    </Label>
-   <TableView fx:id="courseTableView" layoutX="56.0" layoutY="61.0" prefHeight="323.0" prefWidth="986.0">
+   <TableView fx:id="courseTableView" layoutX="56.0" layoutY="61.0" prefHeight="323.0" prefWidth="986.0" style="-fx-background-color: #e4e0e4; -fx-border-color: #3a4960; -fx-border-image-width: 3px;">
       <columns>
-         <TableColumn fx:id="idTableColumn" prefWidth="48.0" text="ID" />
-         <TableColumn fx:id="titleTableColumn" prefWidth="165.0" text="Title" />
-         <TableColumn fx:id="addressTableColumn" prefWidth="119.0" text="Address" />
-         <TableColumn fx:id="priceTableColumn" prefWidth="203.0" text="Price" />
-         <TableColumn fx:id="emailTableColumn" prefWidth="224.0" text="Email" />
-         <TableColumn fx:id="descriptionTableColumn" prefWidth="260.0" text="Description" />
+         <TableColumn fx:id="idTableColumn" prefWidth="48.0" style="-fx-text-background-color: #751c67; -fx-font-size: 16px;" text="ID" />
+         <TableColumn fx:id="titleTableColumn" prefWidth="165.0" style="-fx-text-background-color: #751c67; -fx-font-size: 16px;" text="Title" />
+         <TableColumn fx:id="addressTableColumn" prefWidth="119.0" style="-fx-text-background-color: #751c67; -fx-font-size: 16px;" text="Address" />
+         <TableColumn fx:id="priceTableColumn" prefWidth="203.0" style="-fx-text-background-color: #751c67; -fx-font-size: 16px;" text="Price" />
+         <TableColumn fx:id="emailTableColumn" prefWidth="224.0" style="-fx-text-background-color: #751c67; -fx-font-size: 16px;" text="Email" />
+         <TableColumn fx:id="descriptionTableColumn" prefWidth="260.0" style="-fx-text-background-color: #751c67; -fx-font-size: 16px;" text="Description" />
       </columns>
    </TableView>
-   <TextField fx:id="keyWordTextField" layoutX="178.0" layoutY="18.0" prefHeight="25.0" prefWidth="864.0" promptText="Keywords..." />
-   <VBox layoutX="56.0" layoutY="398.0" prefHeight="174.0" prefWidth="93.0" spacing="10.0">
-      <Label text="Title">
+   <TextField fx:id="keyWordTextField" layoutX="178.0" layoutY="18.0" prefHeight="25.0" prefWidth="864.0" promptText="Keywords..." style="-fx-background-color: #e4e0e4;" />
+   <VBox layoutX="56.0" layoutY="398.0" prefHeight="174.0" prefWidth="108.0" spacing="12.0">
+      <Label text="Title" textFill="#f7f5f4">
          <font>
-            <Font size="14.0" />
+            <Font name="Courier New" size="16.0" />
          </font>
       </Label>
-      <Label text="Address">
+      <Label text="Address" textFill="#f7f5f4">
          <font>
-            <Font size="14.0" />
+            <Font name="Courier New" size="16.0" />
          </font>
       </Label>
-      <Label text="Price">
+      <Label text="Price" textFill="#f7f5f4">
          <font>
-            <Font size="14.0" />
+            <Font name="Courier New" size="16.0" />
          </font>
       </Label>
-      <Label text="Email">
+      <Label text="Email" textFill="#f7f5f4">
          <font>
-            <Font size="14.0" />
+            <Font name="Courier New" size="16.0" />
          </font>
       </Label>
-      <Label text="Description">
+      <Label text="Description" textFill="#f7f5f4">
          <font>
-            <Font size="14.0" />
+            <Font name="Courier New" size="16.0" />
          </font>
       </Label>
    </VBox>
-   <VBox layoutX="149.0" layoutY="398.0" prefHeight="174.0" prefWidth="172.0" spacing="5.0">
-      <TextField fx:id="tfTitle" />
-      <TextField fx:id="tfAddress" layoutX="10.0" layoutY="35.0" />
-      <TextField fx:id="tfPrice" layoutX="10.0" layoutY="60.0" />
-      <TextField fx:id="tfEmail" layoutX="10.0" layoutY="85.0" />
-      <TextField fx:id="tfDescription" />
+   <VBox layoutX="178.0" layoutY="399.0" prefHeight="174.0" prefWidth="172.0" spacing="5.0">
+      <TextField fx:id="tfTitle" promptText="title..." style="-fx-background-color: #e4e0e4;" />
+      <TextField fx:id="tfAddress" layoutX="10.0" layoutY="35.0" promptText="address..." style="-fx-background-color: #e4e0e4;" />
+      <TextField fx:id="tfPrice" layoutX="10.0" layoutY="60.0" promptText="price (som) ..." style="-fx-background-color: #e4e0e4;" />
+      <TextField fx:id="tfEmail" layoutX="10.0" layoutY="85.0" promptText="\@email..." style="-fx-background-color: #e4e0e4;" />
+      <TextField fx:id="tfDescription" promptText="description..." style="-fx-background-color: #e4e0e4;" />
    </VBox>
-   <Button fx:id="btnInsert" layoutX="392.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="108.0" text="Insert" />
-   <Button fx:id="btnUpdate" layoutX="693.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="108.0" text="Update" />
-   <Button fx:id="btnDelete" layoutX="540.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="108.0" text="Delete" />
-   <Button fx:id="btnDeleteAll" layoutX="845.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="108.0" text="Delete all" />
-   <TextField fx:id="tfID" layoutX="541.0" layoutY="418.0" prefHeight="25.0" prefWidth="259.0" />
-   <Label layoutX="520.0" layoutY="421.0" text="ID">
+   <Button fx:id="btnInsert" layoutX="392.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="108.0" style="-fx-background-color: #5cc8ea; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: #3a4960; -fx-border-width: 2px;" text="Insert" textFill="#3a4960">
       <font>
-         <Font size="14.0" />
+         <Font name="Courier New Bold" size="16.0" />
+      </font></Button>
+   <Button fx:id="btnUpdate" layoutX="692.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="108.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px; -fx-border-color: #3a4960; -fx-background-color: #5cc8ea; -fx-border-width: 2px;" text="Update" textFill="#3a4960">
+      <font>
+         <Font name="Courier New Bold" size="16.0" />
+      </font></Button>
+   <Button fx:id="btnDelete" layoutX="541.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="108.0" style="-fx-background-color: #5cc8ea; -fx-background-radius: 10px; -fx-border-color: #3a4960; -fx-border-radius: 10px; -fx-border-width: 2px;" text="Delete" textFill="#3a4960">
+      <font>
+         <Font name="Courier New Bold" size="16.0" />
+      </font></Button>
+   <Button fx:id="btnDeleteAll" layoutX="865.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="108.0" style="-fx-background-color: #ed9978; -fx-background-radius: 10px; -fx-border-color: #3a4960; -fx-border-radius: 10px; -fx-border-width: 2px;" text="Delete all" textFill="#3a4960">
+      <font>
+         <Font name="Courier New Bold" size="14.0" />
+      </font></Button>
+   <TextField fx:id="tfID" layoutX="541.0" layoutY="418.0" prefHeight="25.0" prefWidth="259.0" style="-fx-background-color: #e4e0e4;" />
+   <Label layoutX="512.0" layoutY="419.0" text="ID" textFill="#f7f5f4">
+      <font>
+         <Font name="Courier New Bold" size="18.0" />
       </font>
    </Label>
 </Pane>

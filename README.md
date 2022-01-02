@@ -1,2 +1,2 @@
 # CourseFinder-master
-#Course finder very pizdataya vesch
+#Course finder 
